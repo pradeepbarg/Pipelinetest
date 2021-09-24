@@ -1,0 +1,27 @@
+pipeline {
+    
+    agent any
+    
+    parameters {
+        booleanParam(name: "RELEASE", defaultValue: false)
+    }
+    
+    stages {
+
+        stage("Build") {
+            steps {
+                sh "./fact.sh"
+            }
+        }
+        
+        stage("Publish") {
+            steps {
+                script {
+                    if (params.RELEASE) {
+                        sh "./fib.sh"
+                    }
+                }
+            }
+        }
+    }
+}
