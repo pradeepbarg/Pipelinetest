@@ -8,6 +8,7 @@ pipeline {
 						sh 'echo this is my first stage in pipeline job'
 						sh 'ls -lrt'
 						sh 'sleep 5'
+						sh './fact.sh'
 					}
 				}
 				
