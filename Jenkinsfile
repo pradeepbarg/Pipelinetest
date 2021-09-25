@@ -5,7 +5,9 @@ pipeline {
 			parallel {
 				stage('BUILD1') {
 					steps {
-						sh './fib.sh'
+						sh 'echo this is my first stage in pipeline job'
+						sh 'ls -lrt'
+						sh 'sleep 5'
 					}
 				}
 				
