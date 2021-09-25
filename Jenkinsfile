@@ -5,7 +5,7 @@ pipeline {
 			parallel {
 				stage('BUILD1') {
 					steps {
-						sh 'fib.sh'
+						sh './fib.sh'
 					}
 				}
 				
